@@ -1,0 +1,47 @@
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-font-weight: bold;
+    -fx-background-color: #0f0f1b;
+}
+
+.button {
+    /*-fx-border-style: round;*/
+    /*-fx-border-radius: 20;*/
+    -fx-background-radius: 10;
+    /*-fx-background-color: #253C78;*/
+    -fx-text-fill: #FFFFFF;
+    -fx-border-insets: 5px;
+    -fx-padding: 5px;
+    -fx-background-insets: 5px;
+    -fx-background-color: #2B4162;
+}
+
+.label{
+    -fx-text-fill: #FFFFFF;
+}
+
+.text-field{
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+    -fx-padding: 20px;
+    /*-fx-padding: 20 20 20 20;*/
+    /*-fx-text-fill: #FFFFFF;*/
+    -fx-prompt-text-fill: #253C78;
+    -fx-background-radius: 10;
+    -fx-background-color: #FFFFFF;
+    -fx-highlight-fill: #385F71;
+}
+
+.text-area{
+    /*-fx-fill: #FFEECF;*/
+    -fx-border-style: none;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+    -fx-padding: 5px;
+    -fx-background-color: #FFEECF;
+    -fx-highlight-fill: #FFEECF;
+}
+

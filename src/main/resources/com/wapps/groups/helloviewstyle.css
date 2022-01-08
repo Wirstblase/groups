@@ -1,0 +1,30 @@
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #000000;
+    -fx-background-image: url("bgimage.png");
+    -fx-background-position: center;
+    -fx-background-size: 640,640;
+}
+
+.label{
+    -fx-text-fill: #FFFFFF;
+}
+
+.button{
+
+    /*-fx-border-style: round;*/
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-color: #2B4162;
+    -fx-text-fill: #FFFFFF;
+}
+
+.text-field{
+    -fx-text-fill: #000000;
+    -fx-prompt-text-fill: #253C78;
+    -fx-background-radius: 20;
+    -fx-background-color: #F5F0F6;
+}
