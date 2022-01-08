@@ -41,7 +41,14 @@
     -fx-border-insets: 5px;
     -fx-background-insets: 5px;
     -fx-padding: 5px;
-    -fx-background-color: #FFEECF;
+    -fx-background-color: #40434E;
     -fx-highlight-fill: #FFEECF;
+    -fx-text-fill: #FFFFFF;
+
+}
+
+.text-area .content{
+    -fx-background-color: #40434E;
+    -fx-text-fill: #FFFFFF;
 }
 

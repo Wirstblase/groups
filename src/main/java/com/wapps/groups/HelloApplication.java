@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
 public class HelloApplication extends Application {
     public int sceneIndex = 0, appRunning = 1, sceneLoading = 1;
     public static Stage stageVar;
