@@ -54,7 +54,7 @@ public class DataRefreshHandler {
         String timeStamp = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date());
         System.out.println(timeStamp);
         String username = "";
-        username = UserHandler.getInstance().getUser().getUsername();
+        username = MyUserHandler.getInstance().getUser().getUsername();
 
         DB db = DatabaseHandler.getInstance().getDatabase();
         DBCollection chat = db.getCollection("Chat");
@@ -73,7 +73,7 @@ public class DataRefreshHandler {
     }
 
     public String getBio() {
-        String bio = "", username = UserHandler.getInstance().getUser().getUsername();
+        String bio = "", username = MyUserHandler.getInstance().getUser().getUsername();
 
         DB db = DatabaseHandler.getInstance().getDatabase();
         DBCollection users = db.getCollection("Users");
@@ -91,7 +91,7 @@ public class DataRefreshHandler {
 
     public void setBio(String newBio) {
         //yes
-        String bio = "", username = UserHandler.getInstance().getUser().getUsername();
+        String bio = "", username = MyUserHandler.getInstance().getUser().getUsername();
         BasicDBObject existingUser = new BasicDBObject();
         BasicDBObject queryObj = new BasicDBObject();
         String id = "";
@@ -105,7 +105,7 @@ public class DataRefreshHandler {
             if (name.equals(username)) {
 
                 existingUser.put("Email", object.get("Email"));
-                existingUser.put("Password", UserHandler.getInstance().getUser().getPassword());
+                existingUser.put("Password", MyUserHandler.getInstance().getUser().getPassword());
                 existingUser.put("Bio", newBio); //new bio
                 existingUser.put("Username", username);
 
@@ -127,7 +127,7 @@ public class DataRefreshHandler {
 
     public void setPassword(String newPassword) {
         //yes
-        String bio = "", username = UserHandler.getInstance().getUser().getUsername();
+        String bio = "", username = MyUserHandler.getInstance().getUser().getUsername();
         BasicDBObject existingUser = new BasicDBObject();
         BasicDBObject queryObj = new BasicDBObject();
         String id = "";
@@ -198,9 +198,9 @@ public class DataRefreshHandler {
 
     public void saveUserDataInverted() {
 
-        String name = UserHandler.getInstance().getUser().getUsername();
-        String pass = UserHandler.getInstance().getUser().getPassword();
-        String mail = UserHandler.getInstance().getUser().getEmail();
+        String name = MyUserHandler.getInstance().getUser().getUsername();
+        String pass = MyUserHandler.getInstance().getUser().getPassword();
+        String mail = MyUserHandler.getInstance().getUser().getEmail();
 
         HashMap<String, String> jsonMap = new HashMap<>();
         jsonMap.put("user", name);
@@ -229,9 +229,9 @@ public class DataRefreshHandler {
 
     public void saveUserData() {
 
-        String name = UserHandler.getInstance().getUser().getUsername();
-        String pass = UserHandler.getInstance().getUser().getPassword();
-        String mail = UserHandler.getInstance().getUser().getEmail();
+        String name = MyUserHandler.getInstance().getUser().getUsername();
+        String pass = MyUserHandler.getInstance().getUser().getPassword();
+        String mail = MyUserHandler.getInstance().getUser().getEmail();
 
         HashMap<String, String> jsonMap = new HashMap<>();
         jsonMap.put("user", name);
@@ -267,12 +267,12 @@ public class DataRefreshHandler {
             String pass = (String) loadObject.get("password");
             String mail = (String) loadObject.get("mail");
 
-            UserHandler.getInstance().getUser().setUsername(user);
-            UserHandler.getInstance().getUser().setEmail(mail);
-            UserHandler.getInstance().getUser().setPassword(pass);
+            MyUserHandler.getInstance().getUser().setUsername(user);
+            MyUserHandler.getInstance().getUser().setEmail(mail);
+            MyUserHandler.getInstance().getUser().setPassword(pass);
 
             System.out.println("loaded user: " + user + " mail:" + mail + " pass:" + pass);
-            System.out.println(UserHandler.getInstance().getUser().getPassword());
+            System.out.println(MyUserHandler.getInstance().getUser().getPassword());
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -5,7 +5,6 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.effect.Effect;
 
 import java.util.List;
 
@@ -75,9 +74,9 @@ public class HelloController {
         username = usernameField.getText();
         password = passwordField.getText();
 
-        UserHandler.getInstance().getUser().setEmail(email);
-        UserHandler.getInstance().getUser().setUsername(username);
-        UserHandler.getInstance().getUser().setEmail(password);
+        MyUserHandler.getInstance().getUser().setEmail(email);
+        MyUserHandler.getInstance().getUser().setUsername(username);
+        MyUserHandler.getInstance().getUser().setEmail(password);
 
         if (username.equals("")) {
             System.out.println("username can t be empty");
@@ -152,9 +151,9 @@ public class HelloController {
         username = usernameField.getText();
         password = passwordField.getText();
 
-        UserHandler.getInstance().getUser().setEmail(email);
-        UserHandler.getInstance().getUser().setUsername(username);
-        UserHandler.getInstance().getUser().setEmail(password);
+        MyUserHandler.getInstance().getUser().setEmail(email);
+        MyUserHandler.getInstance().getUser().setUsername(username);
+        MyUserHandler.getInstance().getUser().setEmail(password);
 
         if (username.equals("")) {
             System.out.println("username can t be empty");
@@ -167,7 +166,7 @@ public class HelloController {
         } else {
 
             System.out.print("welcome,");
-            System.out.println(UserHandler.getInstance().getUser().getUsername());
+            System.out.println(MyUserHandler.getInstance().getUser().getUsername());
 
             DB db = DatabaseHandler.getInstance().getDatabase();
             DBCollection users = db.getCollection("Users");

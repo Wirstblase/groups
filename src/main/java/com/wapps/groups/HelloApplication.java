@@ -32,7 +32,7 @@ public class HelloApplication extends Application {
 //
 //        stage.show();
         DataRefreshHandler.getInstance().loadUserData();
-        if(!UserHandler.getInstance().getUser().getUsername().equals("new")){
+        if(!MyUserHandler.getInstance().getUser().getUsername().equals("new")){
             System.out.println("should redirect to main scene");
             HelloApplication.loadMainScene();
         } else {
@@ -71,7 +71,7 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
 
-        String sceneTitle = "groups - logged in as " + UserHandler.getInstance().getUser().getUsername();
+        String sceneTitle = "groups - logged in as " + MyUserHandler.getInstance().getUser().getUsername();
         stageVar.setTitle(sceneTitle);
         stageVar.setScene(scene);
         stageVar.show();
@@ -114,7 +114,7 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
 
         DatabaseHandler.getInstance().init();
-        UserHandler.getInstance().init();
+        MyUserHandler.getInstance().init();
 
         launch();
     }

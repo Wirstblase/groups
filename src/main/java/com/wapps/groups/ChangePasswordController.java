@@ -22,10 +22,10 @@ public class ChangePasswordController {
 
         if(newPasswordField.getText().length() > 7) {
 
-            String userPass = UserHandler.getInstance().getUser().getPassword();
+            String userPass = MyUserHandler.getInstance().getUser().getPassword();
             if (oldPasswordField.getText().equals(userPass)) {
                 DataRefreshHandler.getInstance().setPassword(newPasswordField.getText());
-                UserHandler.getInstance().getUser().setPassword(newPasswordField.getText());
+                MyUserHandler.getInstance().getUser().setPassword(newPasswordField.getText());
                 DataRefreshHandler.getInstance().saveUserDataInverted();
 
                 newPasswordField.setStyle("-fx-background-color: #7dff7d");

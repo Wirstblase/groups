@@ -24,9 +24,9 @@ public class SettingsController {
 
     public void logOutButtonPress(){
 
-        UserHandler.getInstance().getUser().setUsername("new");
-        UserHandler.getInstance().getUser().setPassword("new");
-        UserHandler.getInstance().getUser().setEmail("new");
+        MyUserHandler.getInstance().getUser().setUsername("new");
+        MyUserHandler.getInstance().getUser().setPassword("new");
+        MyUserHandler.getInstance().getUser().setEmail("new");
         HelloApplication.loadHelloScene();
 
         DataRefreshHandler.getInstance().saveUserData();
@@ -62,13 +62,13 @@ public class SettingsController {
         emailLabel.setTranslateX(-8);
 
         //String email = "";
-        //String user = UserHandler.getInstance().getUser().getUsername();
+        //String user = MyUserHandler.getInstance().getUser().getUsername();
         //email = DataRefreshHandler.getInstance().getEmailForUser(user);
         //System.out.println(email);
-        String email = DataRefreshHandler.getInstance().getEmailForUser(UserHandler.getInstance().getUser().getUsername());
+        String email = DataRefreshHandler.getInstance().getEmailForUser(MyUserHandler.getInstance().getUser().getUsername());
         emailLabel.setText(email);
 
-        loggedInLabel.setText("logged in as: "+UserHandler.getInstance().getUser().getUsername());
+        loggedInLabel.setText("logged in as: "+ MyUserHandler.getInstance().getUser().getUsername());
         //String emailLabelText="";
         //emailLabel.setText(emailLabelText);
 
